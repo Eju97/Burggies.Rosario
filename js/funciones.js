@@ -34,7 +34,7 @@ function carritoUI(medallones){
     for (const medallon of medallones) {
       $('#carritoProductos').append(registroCarrito(medallon));
     }
-    $('#carritoProductos').append(`<p id="totalCarrito"> TOTAL ${totalCarrito(medallones)}</p>`);
+    $('#carritoProductos').append(`<p id="totalCarrito"> TOTAL: $ ${totalCarrito(medallones)}</p>`);
     $('.btn-delete').on('click', eliminarCarrito);
     $('.btn-add').click(addCantidad);
     $('.btn-sub').click(subCantidad);
@@ -67,7 +67,7 @@ function carritoUI(medallones){
     $(this).parent().children()[1].innerHTML = medallon.cantidad;
     $(this).parent().children()[2].innerHTML = medallon.subtotal();
 
-    $("#totalCarrito").html(`TOTAL ${totalCarrito(carrito)}`);
+    $("#totalCarrito").html(`TOTAL: $ ${totalCarrito(carrito)}`);
 
     localStorage.setItem("CARRITO",JSON.stringify(carrito));
   }
@@ -80,7 +80,7 @@ function carritoUI(medallones){
       registroUI[1].innerHTML = medallon.cantidad;
       registroUI[2].innerHTML = medallon.subtotal();
 
-      $("#totalCarrito").html(`TOTAL ${totalCarrito(carrito)}`);
+      $("#totalCarrito").html(`TOTAL: $ ${totalCarrito(carrito)}`);
 
       localStorage.setItem("CARRITO",JSON.stringify(carrito));
     }
